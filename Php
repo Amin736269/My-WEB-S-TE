@@ -1,0 +1,14 @@
+// db.php
+$conn = new mysqli("localhost", "root", "", "forum");
+
+// login.php
+session_start();
+$email = $_POST['email'];
+$pass = md5($_POST['password']);
+$res = $conn->query("SELECT * FROM users WHERE email='$email' AND password='$pass'");
+if($res->num_rows > 0){
+   $_SESSION['user'] = $email;
+   header("Location: dashboard.php");
+} else {
+   echo "Xətalı giriş";
+}
