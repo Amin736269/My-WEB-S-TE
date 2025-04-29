@@ -1,0 +1,5 @@
+// user_roles: id, user_id, role (admin, moderator, member)
+
+if($_SESSION['role'] == 'admin'){
+   // panel görünür
+}
