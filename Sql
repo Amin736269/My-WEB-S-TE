@@ -1,0 +1,17 @@
+-- Mövzu cədvəli
+CREATE TABLE topics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    user_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Cavablar cədvəli
+CREATE TABLE replies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    topic_id INT,
+    content TEXT,
+    user_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
