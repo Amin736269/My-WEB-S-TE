@@ -1,0 +1,4 @@
+$res = $conn->query("SELECT * FROM topics ORDER BY created_at DESC");
+while($row = $res->fetch_assoc()){
+    echo "<h2>".$row['title']."</h2><p>".$row['content']."</p><hr>";
+}
